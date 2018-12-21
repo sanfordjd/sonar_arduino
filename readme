@@ -1,0 +1,37 @@
+/* 
+Assumes Autostar sonar sensors are used, along with AdvantageTMS Longrange and Kickplate Sonars. 
+Requires 12V source switched on to power sonars.
+*/
+
+/* 
+   Sonar Ultrasonic Long Range calibration tool.
+
+Assumes Adafruit-RGB-LCD-Shield-Library
+
+Do a Ultrasonic Sonar measurement and print it to the display.
+Continuosly measure the distance and compare if the measured distance stays within a tolerance.
+After a defined number of measurements with all distances within tolerance the sonar is stated ok.
+ The circuit is described in a schematic document.
+ The display pulls In/Out 10 to a voltage level. Out 10 must be separated from the display shield,
+ otherwise the sonar measurement on Input 10 doesent work and will allways return 0.
+
+
+Joe Sanford, Diversey Richmond
+January 2018
+
+     June 2018    V. 1.6: Changed speed of sound from 340m/s to 343m/s as this is what is assumed by the GenX+ Prox Code - JDS
+                           Added in different LCD Screen functionality back in - JDS
+                           Changed GPIO Ports to fit the default ports used in test fixture - JDS
+     June 2018    V. 1.42: Ringing time must be below 2100 ms. Decreased margin. Several sonars calibrated show, that there would be massive amount of bad sonars.
+                           In production the sonars with 2100 ms acceptance worked fine.
+     April 2018   V. 1.41: Check long range sonar ringing time within Proximity board blanking limit of 2.2ms - ringing time must be below 2000ms for margin,
+                           Change speed of sound from 333 to 340 m/s - MG 
+                           Change pulse Duration from 400us to 300us and 70us to have similar behaviour as procimity board
+    January 2018  V. 1.5 : Troubleshooting V2, corrected speed of sound 58kHz Sonar - JDS
+    January 2018  V. 1.4 : Added in different LCD Screen - JDS
+    December 2017 V. 1.32: Sonar stated ok if 80 measurements of a distance are within 0.5% tolerance
+    December 2017 V. 1.30: Calibration of three different sonar types with different characteristics 
+ 
+ */
+ 
+ 
